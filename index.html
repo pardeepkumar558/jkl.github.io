@@ -1,1 +1,165 @@
-<b>Hi</b> I am Lucky
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKL Health Care Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #35a79c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul li {
+                    display: inline;
+                    margin-right: 10px;
+                }
+
+                    nav ul li a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #35a79c;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .btn:hover {
+                background-color: #2c8f86;
+            }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-in {
+            transform: translateX(-100%);
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JKL Health Care Services</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home" class="section fade-in">
+            <h2>Welcome to JKL Health Care Services</h2>
+            <p>We are dedicated to providing top-notch medical oxygen solutions for healthcare facilities.</p>
+            <a href="#services" class="btn">Our Services</a>
+        </section>
+        <section id="services" class="section slide-in">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Oxygen Pipeline Installation</li>
+                <li>Copper Pipe Oxygen Outlet Point Installation</li>
+                <li>Medical Gas Manifold System Setup</li>
+                <li>Oxygen Generation Plant Installation</li>
+            </ul>
+        </section>
+        <section id="clients" class="section fade-in">
+            <h2>Our Clients</h2>
+            <p>We serve a wide range of healthcare facilities, including:</p>
+            <ul>
+                <li>Hospitals</li>
+                <li>Clinics</li>
+                <li>Nursing Homes</li>
+                <li>Rehabilitation Centers</li>
+            </ul>
+        </section>
+        <section id="testimonials" class="section slide-in">
+            <h2>Testimonials</h2>
+            <blockquote>
+                "JKL Health Care Services provided exceptional support in setting up our oxygen distribution system. Their expertise and professionalism are unmatched!" - Dr. Smith, General Hospital
+            </blockquote>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('.section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
